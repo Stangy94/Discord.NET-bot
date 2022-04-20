@@ -1,4 +1,4 @@
 prefix: "&"
-testguild: 848484748622954497
+testguild: "insert Guild ID here"
 tokens:
-    discord: OTUwMDY2MDc3MTU1NjAyNDU0.YiTf_A.bAFIYnaHhCULE4SQYgHaEghRz94
+    discord: "insert Bot Token Here"
