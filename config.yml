@@ -1,4 +1,4 @@
 prefix: "&"
-testguild: "insert Guild ID here"
+testguild: "Insert Test Guild ID here"
 tokens:
-    discord: "insert Bot Token Here"
+    discord: "Insert Bot Token here"

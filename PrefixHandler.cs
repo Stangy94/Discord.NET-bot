@@ -36,7 +36,7 @@ namespace C_Bot
 
             int argPos = 0;
 
-            if (!(message.HasCharPrefix(_config["prefix"][0], ref argPos) || !message.HasMentionPrefix(_client.CurrentUser, ref argPos)) || message.Author.IsBot) return;
+            if (!(message.HasCharPrefix(_config["prefix"][0], ref argPos) || message.HasMentionPrefix(_client.CurrentUser, ref argPos)) || message.Author.IsBot) return;
 
             var context = new SocketCommandContext(_client, message);
 
