@@ -11,7 +11,7 @@ namespace C_Bot.Modules
 {
     public class InteractionModule : InteractionModuleBase<SocketInteractionContext>
     {
-        private readonly ulong roleID = "insert role ID here";
+        private readonly ulong roleID = //insert role ID here;
         
         [SlashCommand("ping", "Receive a ping message!")]
 
