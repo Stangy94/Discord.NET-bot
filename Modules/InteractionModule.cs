@@ -1,5 +1,6 @@
 ﻿using Discord.Interactions;
 using Discord;
+using Discord.WebSocket;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace C_Bot.Modules
 {
     public class InteractionModule : InteractionModuleBase<SocketInteractionContext>
     {
+        private readonly ulong roleID = 848582996046512148;
+        
         [SlashCommand("ping", "Receive a ping message!")]
 
         public async Task HandlePingCommand()
@@ -17,7 +20,7 @@ namespace C_Bot.Modules
             await RespondAsync("Ping!");
         }
 
-        [SlashCommand("components", "Demonstrate buttons and  select menues.")]
+        [SlashCommand("components", "Demonstrate buttons and  select menus.")]
         public async Task HandleComponentCommand()
         {
             var button = new ButtonBuilder()
@@ -60,6 +63,27 @@ namespace C_Bot.Modules
             string input = modal.Greeting;
                 await RespondAsync(input);
         }
+
+        [UserCommand("give-role")]
+        public async Task HandleUserCommand(IUser user)
+        {
+            await (user as SocketGuildUser).AddRoleAsync(roleID);
+            var roles = (user as SocketGuildUser).Roles;
+            string rolesList = string.Empty;
+            foreach (var role in roles)
+            {
+                rolesList += role.Name + "\n";
+            }
+
+            await RespondAsync($"User {user.Mention} has the following roles:\n" + rolesList);
+        }
+
+        [MessageCommand("msg-command")]
+        public async Task HandleMessageCommand(IMessage message)
+        {
+            await RespondAsync($"Message author is: {message.Author.Username}");
+        }
+
     }
 
     public class DemoModal : IModal
