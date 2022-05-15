@@ -19,10 +19,6 @@ These packages and versions used may be changed over time as new features are ad
 ### NOTE
 The YamlDotNet version used (8.1.2) is important. The latest is bugged and will not work.
 
-## Layout
-The /main branch is the boilerplate bot code. Only basic functionality.
-The other branches are feature additions on top of the boilerplate code. They can be mixed and matched as desired. I will do my best to maintain compatibility across them.
-
 ## Features
 - Slash commands
 - User Context Commands
