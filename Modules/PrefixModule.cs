@@ -13,7 +13,7 @@ namespace C_Bot.Modules
         [Command("ping")]
         public async Task HandlePingCommand()
         {
-            await Context.Message.ReplyAsync("PING!");
+            await Context.Message.ReplyAsync("Pong!");
         }
     }
 }
